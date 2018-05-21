@@ -5,6 +5,13 @@
     <title>Popular Themes</title>
 </head>
 <body>
+{% for theme in themes %}
+
+    {{theme.pk}}
+    {{theme.name}}<br>
+    {{theme.points}}<br>
+
+{% endfor %}
 
 </body>
 </html>
