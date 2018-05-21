@@ -9,6 +9,17 @@
 <h1>Home</h1>
 <a type="button" href="{% url 'popular-themes' %}">Popular Themes</a>
 
+<hr>
 
+
+{% for video in videos %}
+    <strong>Title:</strong><a href="{% url 'detail-video' video.pk %}" >{{ video.title }}</a><br>
+    <strong>Data Uploaded:</strong>{{ video.date_uploaded }}<br>
+    <strong>Views:</strong>{{ video.views }}<br>
+    {% for theme in video.themes.all %}
+        <strong>Themes:</strong>{{ theme.name }}<br>
+    {% endfor %}
+    <br>
+{% endfor %}
 </body>
 </html>

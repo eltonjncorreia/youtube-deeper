@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Videos</title>
+</head>
+<body>
+
+
+    <strong>Title:</strong>{{ details.title }}<br>
+    <strong>Data Uploaded:</strong>{{ details.date_uploaded }}<br>
+    <strong>Views:</strong>{{ details.views }}<br>
+    {% for theme in details.themes.all %}
+        <strong>Themes:</strong>{{ theme.name }}<br>
+    {% endfor %}
+    <br>
+
+
+<a href="{% url 'home' %}">Voltar</a>
+</body>
+</html>
