@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from video.core.models import Video
 
@@ -8,10 +8,10 @@ def home(request):
     return render(request, 'core/home.html', {'videos': videos})
 
 
-def detail_video(request, pk):
+def detail_video(request, pk=None):
     try:
-        details = Video.objects.get(pk=pk)
-        details.views + 1
+        details = get_object_or_404(Video, pk=pk)
+        # details.views + 1
     except Video.DoesNotExist as e:
         raise e
 
