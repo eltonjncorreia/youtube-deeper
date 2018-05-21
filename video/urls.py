@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('get_popular_themes/', views.popular_themes, name="popular-themes"),
+    path('detail/<int:pk>/', views.detail_video, name="detail-video"),
 ]
