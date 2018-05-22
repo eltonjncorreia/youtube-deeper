@@ -1,7 +1,4 @@
 from datetime import datetime as d
-from itertools import count
-
-from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 
 from video.core.models import Video, Theme
