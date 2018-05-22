@@ -5,7 +5,7 @@ from django.db import models
 
 class Theme(models.Model):
     name = models.CharField(max_length=255)
-    points = models.FloatField(default=0)
+    points = models.IntegerField(default=0)
 
     def __str__(self):
         return self.name
@@ -36,7 +36,7 @@ class Video(models.Model):
                                          datetime.now().date() - timedelta(days=365))])
     views = models.IntegerField(default=0)
     themes = models.ManyToManyField('Theme', related_name='videos_themes')
-    points = models.FloatField(default=0)
+    points = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title

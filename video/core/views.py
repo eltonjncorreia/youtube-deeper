@@ -25,18 +25,13 @@ def detail_video(request, pk=None):
 
 def popular_themes(request):
     todos = Theme.objects.prefetch_related('videos_themes').order_by('-points')
+
     for theme in todos:
         for v in theme.videos_themes.all():
             v.points = scores(v.pk)
             v.save(force_update=True)
 
-        for them in theme.videos_themes.filter(themes=theme.pk):
-            s = them.points
-            print(s)
-            s+=s
-            theme.points = s
-            theme.save(force_update=True)
-
+        theme.points = v.points
 
     return render(request, 'core/popular-themes.html', {'themes': todos})
 

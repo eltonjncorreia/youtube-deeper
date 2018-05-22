@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
 from video.core.models import Video, Thumb, Theme, Comment
 
 admin.site.register(Video)
