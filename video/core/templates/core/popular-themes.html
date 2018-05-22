@@ -7,8 +7,8 @@
 <body>
 {% for theme in themes %}
 
-    {{theme.pk}}
-    {{theme.name}}<br>
+    <strong>ID:</strong>{{theme.pk}}<br>
+    <strong>Name:</strong>{{theme.name}}<br>
     {{theme.points}}<br>
 
 {% endfor %}
